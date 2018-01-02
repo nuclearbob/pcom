@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
+import cgi
 import json
 import os
+import random
 
 FILE='/usr/lib/cgi-bin/pcom/data.json'
 
@@ -81,10 +83,25 @@ if os.path.isfile(FILE):
     except:
         pass
 
+arguments = cgi.FieldStorage()
+if 'draw' in arguments.keys():
+    city = arguments['draw']
+    if city is '':
+        city = random.choice(packs[-1])
+    discard.append(city)
+    packs[-1].remove(city)
+
+if len(packs[-1]=0):
+    packs.pop()
+
 print('Content-type: text/plain')
 print()
 print("Pack has: " + str(sum([len(pack) for pack in game['packs']])) +
       ' cards.')
+print()
+print(pack)
+print()
+print(discard)
 print()
 
 with open(FILE, 'w') as file_object:
