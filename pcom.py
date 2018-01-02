@@ -79,7 +79,7 @@ game = {
     'discard': discard,
 }
 
-print('Content-type: text/plain')
+print('Content-type: text/html')
 print()
 
 if os.path.isfile(FILE):
@@ -99,7 +99,7 @@ if 'draw' in arguments.keys():
     game['packs'][-1].remove(city)
 
 if 'intensify' in arguments.keys():
-    game['stacks'].append(copy.deepcopy(game['discard']))
+    game['packs'].append(copy.deepcopy(game['discard']))
     game['discard'] = []
 
 if len(game['packs'][-1]) == 0:
