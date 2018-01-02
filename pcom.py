@@ -99,7 +99,7 @@ print()
 print("Pack has: " + str(sum([len(pack) for pack in game['packs']])) +
       ' cards.')
 print()
-print(game['pack'])
+print(game['packs'])
 print()
 print(game['discard'])
 print()
