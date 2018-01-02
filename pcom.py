@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import json
 import os
 
 FILE='/usr/lib/cgi-bin/pcom/data.json'
