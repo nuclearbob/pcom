@@ -78,6 +78,9 @@ game = {
     'discard': discard,
 }
 
+print('Content-type: text/plain')
+print()
+
 if os.path.isfile(FILE):
     try:
         with open(FILE, 'r') as file_object:
@@ -86,18 +89,19 @@ if os.path.isfile(FILE):
         pass
 
 arguments = cgi.FieldStorage()
+print(arguments)
+print()
 if 'draw' in arguments.keys():
     city = arguments['draw']
     if city is '':
         city = random.choice(packs[-1])
+    print('Drawing city:' + city)
+    print()
     game['discard'].append(city)
     game['packs'][-1].remove(city)
 
 if len(game['packs'][-1]) == 0:
     game['packs'].pop()
-
-print('Content-type: text/plain')
-print()
 print("Pack has: " + str(sum([len(pack) for pack in game['packs']])) +
       ' cards.')
 print()
