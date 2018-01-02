@@ -2,7 +2,7 @@
 
 import os
 
-FILE='/usr/share/cgi-bin/pcom/data.json'
+FILE='/usr/lib/cgi-bin/pcom/data.json'
 
 colors = {
     'white': 0xFFFFFF,
