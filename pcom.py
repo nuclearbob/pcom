@@ -78,7 +78,7 @@ game = {
     'discard': discard,
 }
 
-print('Content-type: text/plain')
+print('Content-type: text/html')
 print()
 
 if os.path.isfile(FILE):
@@ -94,6 +94,10 @@ print()
 if 'draw' in arguments.keys():
     city = arguments.getvalue('draw')
     if city is 'random':
+        print(packs)
+        print()
+        print(packs[-1])
+        print()
         city = random.choice(packs[-1])
     print('Drawing city:' + city)
     print()
