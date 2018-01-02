@@ -94,13 +94,8 @@ print()
 if 'draw' in arguments.keys():
     city = arguments.getvalue('draw')
     if city=='random':
-        print(packs)
-        print()
-        print(packs[-1])
-        print()
-        city = random.choice(packs[-1])
-    print('Drawing city:' + city)
-    print()
+        city = random.choice(game['packs'][-1])
+    print('Drawing city: ' + city)
     game['discard'].append(city)
     game['packs'][-1].remove(city)
 
@@ -108,8 +103,6 @@ if len(game['packs'][-1]) == 0:
     game['packs'].pop()
 print("Pack has: " + str(sum([len(pack) for pack in game['packs']])) +
       ' cards.')
-print()
-print(game['packs'])
 print()
 print(game['discard'])
 print()
