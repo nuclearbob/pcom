@@ -60,8 +60,8 @@ cities.append({
 
 pack = []
 for city in cities:
-    for _ in range(city.count):
-        pack.append(city.name)
+    for _ in range(city['count']):
+        pack.append(city['name']')
 packs = [pack]
 
 discard = []
