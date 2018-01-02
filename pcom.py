@@ -78,7 +78,7 @@ game = {
     'discard': discard,
 }
 
-print('Content-type: text/html')
+print('Content-type: text/plain')
 print()
 
 if os.path.isfile(FILE):
