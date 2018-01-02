@@ -124,9 +124,10 @@ def percent(number):
     return str(100.0*number) + '%'
 
 for city in game['cities']:
-    top = percent(game['packs'][-1].count(city)//len(game(['packs'][-1])))
-    bottom = (game['packs'][-1].count(city)//len(game(['packs'][-1])))
-    print('{} {} {}'.format(city, top, bottom))
+    name = city['name']
+    top = percent(game['packs'][-1].count(name)//len(game['packs'][-1]))
+    bottom = (game['packs'][-1].count(name)//len(game['packs'][-1]))
+    print('{} {} {}'.format(name, top, bottom))
 
 with open(FILE, 'w') as file_object:
     json.dump(game, file_object)
