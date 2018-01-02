@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import cgi
+import copy
 import json
 import os
 import random
@@ -89,8 +90,6 @@ if os.path.isfile(FILE):
         pass
 
 arguments = cgi.FieldStorage()
-print(arguments)
-print()
 if 'draw' in arguments.keys():
     city = arguments.getvalue('draw')
     if city=='random':
@@ -99,10 +98,16 @@ if 'draw' in arguments.keys():
     game['discard'].append(city)
     game['packs'][-1].remove(city)
 
+if 'intensify' in arguments.keys():
+    game['stacks'].append(copy.deepcopy(game['discard']))
+    game['discard'] = []
+
 if len(game['packs'][-1]) == 0:
     game['packs'].pop()
 print("Pack has: " + str(sum([len(pack) for pack in game['packs']])) +
       ' cards.')
+print()
+print('Discards:')
 print()
 print(game['discard'])
 print()
