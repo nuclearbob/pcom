@@ -88,20 +88,20 @@ if 'draw' in arguments.keys():
     city = arguments['draw']
     if city is '':
         city = random.choice(packs[-1])
-    discard.append(city)
-    packs[-1].remove(city)
+    game['discard'].append(city)
+    game['packs'][-1].remove(city)
 
-if len(packs[-1] == 0):
-    packs.pop()
+if len(game['packs'][-1]) == 0:
+    game['packs'].pop()
 
 print('Content-type: text/plain')
 print()
 print("Pack has: " + str(sum([len(pack) for pack in game['packs']])) +
       ' cards.')
 print()
-print(pack)
+print(game['pack'])
 print()
-print(discard)
+print(game['discard'])
 print()
 
 with open(FILE, 'w') as file_object:
