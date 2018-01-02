@@ -79,7 +79,7 @@ game = {
     'discard': discard,
 }
 
-print('Content-type: text/html')
+print('Content-type: text/plain')
 print()
 
 if os.path.isfile(FILE):
@@ -97,6 +97,14 @@ if 'draw' in arguments.keys():
     print('Drawing city: ' + city)
     game['discard'].append(city)
     game['packs'][-1].remove(city)
+
+if 'infect' in arguments.keys():
+    city = arguments.getvalue('infect')
+    if city=='random':
+        city = random.choice(game['packs'][0])
+    print('Drawing city: ' + city)
+    game['discard'].append(city)
+    game['packs'][0].remove(city)
 
 if 'intensify' in arguments.keys():
     game['packs'].append(copy.deepcopy(game['discard']))
