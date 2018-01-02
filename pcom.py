@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import cgitb; cgitb.enable() # Optional; for debugging only
+
 import cgi
 import json
 import os
