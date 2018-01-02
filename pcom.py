@@ -61,7 +61,7 @@ cities.append({
 pack = []
 for city in cities:
     for _ in range(city['count']):
-        pack.append(city['name']')
+        pack.append(city['name'])
 packs = [pack]
 
 discard = []
@@ -82,7 +82,8 @@ if os.path.isfile(FILE):
 
 print('Content-type: text/plain')
 print()
-print("Pack has: " + sum([len(pack) for pack in game['packs']]) + ' cards.')
+print("Pack has: " + str(sum([len(pack) for pack in game['packs']])) +
+      ' cards.')
 print()
 
 with open(FILE, 'w') as file_object:
