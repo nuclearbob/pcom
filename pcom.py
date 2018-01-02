@@ -91,7 +91,7 @@ if 'draw' in arguments.keys():
     discard.append(city)
     packs[-1].remove(city)
 
-if len(packs[-1]=0):
+if len(packs[-1] == 0):
     packs.pop()
 
 print('Content-type: text/plain')
