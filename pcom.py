@@ -125,8 +125,8 @@ def percent(number):
 
 for city in game['cities']:
     name = city['name']
-    top = percent(game['packs'][-1].count(name)//len(game['packs'][-1]))
-    bottom = (game['packs'][-1].count(name)//len(game['packs'][-1]))
+    top = percent(game['packs'][-1].count(name)/len(game['packs'][-1]))
+    bottom = (game['packs'][-1].count(name)/len(game['packs'][-1]))
     print('{} {} {}'.format(name, top, bottom))
 
 with open(FILE, 'w') as file_object:
