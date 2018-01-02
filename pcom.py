@@ -93,7 +93,7 @@ print(arguments)
 print()
 if 'draw' in arguments.keys():
     city = arguments.getvalue('draw')
-    if city is '':
+    if city is 'random':
         city = random.choice(packs[-1])
     print('Drawing city:' + city)
     print()
